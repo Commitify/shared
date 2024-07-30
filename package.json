@@ -1,0 +1,29 @@
+{
+  "name": "@comitter/shared",
+  "version": "0.0.1",
+  "description": "Shared elements for commiter tool",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "rioukkevin",
+  "license": "None",
+  "scripts": {
+    "build":"bun run build.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./types": "./dist/types/index.js",
+    "./utils": "./dist/utils/index.js",
+    "./validation": "./dist/validation/index.js"
+  },
+  "dependencies": {
+    "joi": "17.13.3"
+  },
+  "devDependencies": {
+    "@types/bun": "1.1.6",
+    "bun-plugin-dts": "0.2.3",
+    "typescript": "5.5.4"
+  }
+}
