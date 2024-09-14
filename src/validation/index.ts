@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { Answer, Question, QuestionBase, QuestionSelect, QuestionSelectOption, Setting } from "../types";
+import { Answer, Question, QuestionSelectOption, Setting } from "../types";
 
 // Enum for QuestionType
 const QuestionTypeSchema = {
@@ -30,7 +30,9 @@ const QuestionSelectSchema = QuestionBaseSchema.keys({
 
 // Other Question Schema
 const QuestionOtherSchema = QuestionBaseSchema.keys({
-  type: Joi.string().valid(QuestionTypeSchema.String, QuestionTypeSchema.Number).required(),
+  type: Joi.string()
+    .valid(QuestionTypeSchema.String, QuestionTypeSchema.Number)
+    .required(),
   placeholder: Joi.string().optional(),
   validator: Joi.function().arity(1).optional(),
   formatter: Joi.function().arity(1).optional(),
@@ -64,6 +66,7 @@ const SettingSchema = Joi.object<Setting>({
   name: Joi.string().required(),
   questions: Joi.array().items(QuestionSchema).required(),
   templating: Joi.function().arity(1).required(),
+  autoCommit: Joi.boolean().optional(),
 });
 
 export {

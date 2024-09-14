@@ -1,13 +1,12 @@
 {
-  "name": "@comitter/shared",
-  "version": "0.0.1",
-  "description": "Shared elements for commiter tool",
+  "name": "@comitify/shared",
+  "private": false,
+  "version": "0.2.4",
+  "description": "Shared elements for comitify tool",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "rioukkevin",
-  "license": "None",
   "scripts": {
-    "build":"bun run build.mjs"
+    "build": "bun run build.mjs"
   },
   "files": [
     "dist"
@@ -19,11 +18,34 @@
     "./validation": "./dist/validation/index.js"
   },
   "dependencies": {
+    "cosmiconfig": "^9.0.0",
     "joi": "17.13.3"
   },
   "devDependencies": {
     "@types/bun": "1.1.6",
     "bun-plugin-dts": "0.2.3",
+    "semver": "^7.6.3",
     "typescript": "5.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Commitify/shared.git"
+  },
+  "keywords": [
+    "comitify",
+    "commit",
+    "git",
+    "cli",
+    "tool"
+  ],
+  "author": "Comitify <comitify.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Commitify/shared/issues"
+  },
+  "homepage": "https://github.com/Commitify/shared",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
